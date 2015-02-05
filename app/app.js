@@ -1,12 +1,18 @@
-'use strict';
+(function(){
 
-// Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+  var dashboardApp = angular.module("mdashboard", ["ngRoute","ui.bootstrap","nvd3","ngResource","checklist-model","ngCookies"]); 
+      
+  dashboardApp.config(function($routeProvider){
+    $routeProvider
+      .when("/dashboard",{
+        templateUrl: "dashboard/dashboard.html",
+        controller: "DashBoardController"
+      })
+      .when("/settings",{
+        templateUrl: "settings/settings.html",
+        controller: "SettingsController"
+      })
+      .otherwise({redirectTo:"/dashboard"});
+  });
+  
+}());

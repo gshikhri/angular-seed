@@ -1,0 +1,69 @@
+<div class="jumbotron" >
+    <div class="container">
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-md-2">
+                <img ng-src="https://placehold.it/175x200"/>    
+            </div>
+            <div class="col-md-6 col-md-offset-1">
+                <h3>Welcome, {{name}}</h3>
+                Change profile photo
+                <br>
+                Image should be atleast 300px x 300px
+                <button type="button" class="col-md-offset-2 btn btn-default">Default</button>
+            </div>
+        </div>
+        <br>
+        <br>    
+        <tabset>
+            <tab heading="Dashboard and Reports">
+                <br>
+                <br>
+                <h4>Dashboard</h4>
+                <hr>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">METRICS TO DISPLAY</h4>
+                  </div>
+                  <div class="panel-body">
+                    <div class="row">
+                        <div ng-repeat="metric in metrics">
+                            <div class="col-md-4">
+                                <input type="checkbox" checklist-model="checkedmetrics.metrics" checklist-value="metric"> {{metric}}
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <br>
+                <h4>Reports</h4>
+                <br>
+                <div class="row">
+                    <div class="col-md-4">
+                    How often do you wish to see an email report?
+                    </div>
+                    <div class="col-md-2 input-group">
+                      <input type="text" class="form-control">
+                      <span class="input-group-addon">days</span>
+                    </div>
+                </div>
+                <br>
+                <a class="btn btn-default" href ng-click="storeMetrics()" role="button">Save</a>
+            </tab>
+            <tab heading="Minematic Performance">
+              
+            </tab>
+            <tab heading="API">
+              
+            </tab>
+            <tab heading="General">
+              
+            </tab>
+            <tab heading="Billing">
+              
+            </tab>
+        </tabset>
+    </div>
+</div>
